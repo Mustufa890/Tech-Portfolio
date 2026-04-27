@@ -1,65 +1,44 @@
+'use client'
 import Image from "next/image";
-
+import { motion } from "motion/react"
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+  <>
+  <motion.div 
+   initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}className="Hero-sec justify-items-center text-center p-8 " >
+  <h2 className=" text-white text-4xl sm:text-3xl md:text-6xl" >Build Fast Scale <br/> Smart  <span className="text-emerald-400" > Grow Digitally. </span> </h2>  
+  <p className="text-center p-5 text-gray-400 text-3xl sm:text-2xl md:text-3xl " >Leveraging modern tech <br/> like Next.js </p>
+  <Image className="w-2xl mask-b-from-5 rounded-md m-5 " src='/img1.jpg' loading="eager" alt="img1"  width={900} height={200} />
+  <p className="text-white animate-bounce text-5xl  ">↓</p>
+  </motion.div>
+  <motion.div 
+  initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+  className="About-sec justify-items-center items-center p-5 " >
+  <h2 className=" text-center text-4xl sm:text-3xl md:text-5xl text-emerald-500 font-medium " > About Us </h2>
+  <p className="text-center text-white lg:text-2xl sm:max-w-7rem m-3.5 " >We are a modern technology <br/> company  focused  on building  high  -performance <br/> <span className="text-emerald-300" > web applications </span> and   <span className="text-emerald-200" >  digital solutions. </span> </p>  
+  </motion.div>
+  <br/>
+  < motion.div 
+  initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+  className="skill justify-items-center items-center p-5 " >
+  <h2 className="  text-white text-center text-4xl sm:text-3xl md:text-5xl " >Featured Skill </h2> 
+  </motion.div>
+  <motion.div className="Images flex items-center justify-center " >
+  <Image   className="w-73" src='/react.png' width={400} height={400}  alt="react" /> 
+  <Image  className="w-20 sm:w-20 md:22 " src='/nextjs.png' width={400} height={400}  alt="Next" />   
+  </motion.div>
+  <div className="justify-items-center" >
+  
+  </div>
+  </>  
   );
 }
